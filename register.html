@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>สมัครสมาชิก - LuckyShop24</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style>
+      :root {
+        --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --card-bg: #ffffff;
+      }
+      body {
+        font-family: "Kanit", sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        color: var(--text-main);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .auth-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+      .auth-card {
+        background: var(--card-bg);
+        border: none;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+        width: 100%;
+        max-width: 550px;
+        animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .form-label {
+        font-weight: 500;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+      }
+      .form-control {
+        border-radius: 10px;
+        padding: 0.7rem 1rem;
+        border: 1px solid #e2e8f0;
+        background-color: #f8fafc;
+      }
+      .form-control:focus {
+        background-color: #ffffff;
+        border-color: #a78bfa;
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+      }
+      .btn-primary {
+        background: var(--primary-gradient);
+        border: none;
+        padding: 0.8rem;
+        font-weight: 600;
+        border-radius: 12px;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+      }
+      @keyframes slideUpFade {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="card auth-card">
+        <div class="card-body p-4 p-md-5">
+          <div class="text-center mb-4">
+            <h3 class="fw-bold mb-1" style="color: #4f46e5">สมัครสมาชิกใหม่</h3>
+            <p class="text-muted small">
+              กรอกข้อมูลด้านล่างเพื่อเข้าร่วมระบบ LuckyShop24
+            </p>
+          </div>
+
+          <form id="registerForm">
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label">ชื่อจริง</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="ชื่อ"
+                  required
+                />
+              </div>
+              <div class="col-sm-6">
+                <label for="lastName" class="form-label">นามสกุล</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="นามสกุล"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label"
+                >เบอร์โทรศัพท์ (ใช้เข้าสู่ระบบ)</label
+              >
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                placeholder="08xxxxxxxx"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label"
+                >อีเมล
+                <span class="text-muted fw-normal">(ตัวเลือก)</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="example@email.com"
+              />
+            </div>
+
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <label for="password" class="form-label">รหัสผ่าน</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="ตั้งรหัสผ่าน"
+                  required
+                />
+              </div>
+              <div class="col-sm-6">
+                <label for="confirmPassword" class="form-label"
+                  >ยืนยันรหัสผ่าน</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmPassword"
+                  placeholder="กรอกรหัสผ่านอีกครั้ง"
+                  required
+                />
+              </div>
+            </div>
+
+            <div
+              class="form-check mb-4 bg-light p-3 rounded-3"
+              style="border: 1px solid #e2e8f0"
+            >
+              <input
+                class="form-check-input ms-1"
+                type="checkbox"
+                id="policyCheckbox"
+              />
+              <label
+                class="form-check-label ms-2 small text-muted"
+                for="policyCheckbox"
+              >
+                ฉันได้อ่านและยอมรับ
+                <a
+                  href="#"
+                  id="viewPolicyLink"
+                  class="text-primary fw-medium text-decoration-none"
+                  >นโยบายความเป็นส่วนตัว</a
+                >
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-100 text-white"
+              id="registerBtn"
+              disabled
+            >
+              ยืนยันการสมัครสมาชิก
+            </button>
+          </form>
+
+          <div class="text-center mt-4 pt-3 border-top">
+            <p class="small text-muted mb-0">
+              มีบัญชีผู้ใช้งานอยู่แล้ว?
+              <a
+                href="index.html"
+                class="text-primary fw-bold text-decoration-none"
+                >เข้าสู่ระบบ</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
