@@ -244,10 +244,15 @@ function handleRegisterPage() {
   const registerBtn = document.getElementById("registerBtn");
   const policyCheckbox = document.getElementById("policyCheckbox");
 
-  if (policyCheckbox)
+  // แก้ไขจุดบั๊ก: ตรวจเช็คสถานะ Checkbox ทันทีที่เข้าหน้าเพจ และเปลี่ยนสถานะปุ่มตามการติ๊กถูก
+  if (policyCheckbox && registerBtn) {
+    registerBtn.disabled = !policyCheckbox.checked;
+
     policyCheckbox.addEventListener("change", function () {
       registerBtn.disabled = !this.checked;
     });
+  }
+
   if (registerForm) {
     registerForm.addEventListener("submit", (e) => {
       e.preventDefault();
